@@ -44,6 +44,7 @@ public class ContactService
         Console.ReadKey();
     }
 
+
     public void ShowAllContacts()
     {
         if (contactList.Count != 0)
