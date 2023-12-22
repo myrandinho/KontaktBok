@@ -6,14 +6,14 @@ namespace NYTTFORSOK;
 
 public class FileService
 {
-    public List<Contact> GetContentFromFile(string filePath)
+    public List<Contact> GetContentFromFile(string filePath) //Metod som hämtar innehållet från filePath i parametern.
     {
-        try
+        try 
         {
-            if (File.Exists(filePath))
+            if (File.Exists(filePath)) //Kollar om filen finns.
             {
-                string jsonContent = File.ReadAllText(filePath);
-                return JsonConvert.DeserializeObject<List<Contact>>(jsonContent) ?? new List<Contact>();
+                string jsonContent = File.ReadAllText(filePath); //Spar innehållet till variabeln JsonContent.
+                return JsonConvert.DeserializeObject<List<Contact>>(jsonContent) ?? new List<Contact>();  //Gör om listan från Json-format till "vanligt format".
             }
             else
             {
@@ -28,7 +28,7 @@ public class FileService
         }
     }
 
-    public void SaveContentToFile(List<Contact> list, string filePath)
+    public void SaveContentToFile(List<Contact> list, string filePath) //Metod som tar emot en lista och sökväg. Listan görs om till Json format och sedan sparas till filePath.
     {
         try
         {

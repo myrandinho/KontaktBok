@@ -2,21 +2,21 @@
 
 namespace NYTTFORSOK;
 
-public class ContactService
+public class ContactService 
 {
-    FileService fileService = new FileService();
-    string filePath = @"C:\my-projects\NYJSONFIL.json";
-    List<Contact> contactList;
+    FileService fileService = new FileService(); //Instansiering av klassen FileService.
+    string filePath = @"C:\my-projects\NYJSONFIL.json"; //Skapar variabel med sökväg. 
+    List<Contact> contactList; //Skapar lista.
 
     public ContactService()
     {
       
-        contactList = fileService.GetContentFromFile(filePath);
+        contactList = fileService.GetContentFromFile(filePath); //Hämtar innehållet från filePath till min lista contactList.
     }
 
 
 
-    public void ShowAddContact()
+    public void ShowAddContact() //Metod som ber användaren skapa en kontakt och sparar kontakten.
     {
         
         Console.Write("Ange förnamn: ");
@@ -34,23 +34,23 @@ public class ContactService
         Console.Write("Ange Adress: ");
         string Adress = Console.ReadLine();
 
-        Contact contact = new Contact(FirstName, LastName, Email, PhoneNumber, Adress);
+        Contact contact = new Contact(FirstName, LastName, Email, PhoneNumber, Adress); //Skapar kontakt.
 
-        contactList.Add(contact);
+        contactList.Add(contact); //Lägger till kontakt i listan.
 
-        fileService.SaveContentToFile(contactList, filePath);
+        fileService.SaveContentToFile(contactList, filePath); //Sparar lista till fil.
         Console.WriteLine();
         Console.WriteLine("Kontaken har lagts till i adressboken. Tryck på valfri knapp för att gå vidare.");
         Console.ReadKey();
     }
 
 
-    public void ShowAllContacts()
+    public void ShowAllContacts() //Metod som visar alla kontaker från listan.
     {
-        if (contactList.Count != 0)
+        if (contactList.Count != 0) //Kontrollerar att listan inte är tom.
         {
             Console.Clear();
-            foreach (Contact c in contactList)
+            foreach (Contact c in contactList) //Skriver ut varje kontakt som finns i listan.
             {
                 Console.WriteLine($"Förnamn: {c.FirstName}");
                 Console.WriteLine($"Efternamn: {c.LastName}");
@@ -70,13 +70,13 @@ public class ContactService
         
     }
 
-    public void ShowGetSpecificContact()
+    public void ShowGetSpecificContact() //Metod visar all information om en specifik kontakt.
     {
         Console.Clear();
         Console.Write("Ange förnamn: ");
         string findContact = Console.ReadLine();
         Console.Clear();
-        Contact showContactFromList = contactList.Find(e => e.FirstName.ToLower() == findContact.ToLower());
+        Contact showContactFromList = contactList.Find(e => e.FirstName.ToLower() == findContact.ToLower()); //Letar efter förnamnet som matats in finns i listan.
         if (showContactFromList != null)
         {
             Console.WriteLine($"Förnamn: {showContactFromList.FirstName}");
@@ -93,16 +93,16 @@ public class ContactService
         }
     }
 
-    public void ShowDeleteContact()
+    public void ShowDeleteContact() //Metod som raderar kontakt från listan
     {
         Console.Clear();
         Console.Write("Ange email: ");
         string deleteContact = Console.ReadLine();
-        Contact contactToRemove = contactList.Find(e => e.Email.ToLower() == deleteContact.ToLower());
+        Contact contactToRemove = contactList.Find(e => e.Email.ToLower() == deleteContact.ToLower()); //Kollar om mailen finns i listan eller inte.
         if(contactToRemove != null)
         {
-            contactList.Remove(contactToRemove);
-            fileService.SaveContentToFile (contactList, filePath);
+            contactList.Remove(contactToRemove); //Raderar kontakten från listan.
+            fileService.SaveContentToFile (contactList, filePath); //Sparar listan till fil.
             Console.Clear();
             Console.WriteLine($"{contactToRemove.FirstName} {contactToRemove.LastName} har raderats från listan.");
             Console.ReadKey();
@@ -114,9 +114,9 @@ public class ContactService
         }
     }
 
-    public void ShowUpdateContact()
+    public void ShowUpdateContact() //Metod som kan uppdatera kontakt.
     {
-        if (contactList.Count == 0)
+        if (contactList.Count == 0) 
         {
             Console.Clear();
             Console.WriteLine("Det finns inga kontakter i listan. Tryck på valfri knapp för att fortsätta.");
@@ -126,7 +126,7 @@ public class ContactService
             Console.Clear();
             Console.Write("Ange email: ");
             string updateContact = Console.ReadLine();
-            Contact contactToUpdate = contactList.Find(e => e.Email == updateContact.ToLower());
+            Contact contactToUpdate = contactList.Find(e => e.Email == updateContact.ToLower()); 
 
             Console.Clear();
             Console.WriteLine("1. Förnamn");
@@ -213,7 +213,7 @@ public class ContactService
 
     }
 
-    public void ShowMainMenu()
+    public void ShowMainMenu() //Start meny som börjar med att hämta data från fil.
     {
         fileService.GetContentFromFile(filePath);
 
@@ -263,7 +263,7 @@ public class ContactService
         }
     }
 
-    public void QuitApplication()
+    public void QuitApplication() //Metod som avslutar programmet.
     {
         Console.Clear();
         Console.Write("Vill du verkligen avsluta progammet? (y/n): ");

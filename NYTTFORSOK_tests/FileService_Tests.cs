@@ -8,7 +8,7 @@ public class FileService_Tests
 {
     [Fact]
 
-    public void GetContentFromFile_FileExists_ReturnsList()
+    public void GetContentFromFile_FileExists_ReturnsList() //Testar om filen finns
     {
         // Arrange
         string filePath = @"C:\my-projects\NYJSONFIL.json";
@@ -24,7 +24,7 @@ public class FileService_Tests
     }
 
     [Fact]
-    public void GetContentFromFile_FileDoesNotExist_ReturnsEmptyList()
+    public void GetContentFromFile_FileDoesNotExist_ReturnsEmptyList() //Testar om filen inte finns. 
     {
         // Arrange
         var filePath = @$"C:\{Guid.NewGuid()}\test.json";
