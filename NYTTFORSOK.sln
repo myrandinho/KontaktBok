@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NYTTFORSOK", "NYTTFORSOK\NY
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NYTTFORSOK_tests", "NYTTFORSOK_tests\NYTTFORSOK_tests.csproj", "{CF0F4CA6-3871-4427-978E-23A11D8421EC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfAdressbok1.0", "..\WpfAdressbok1.0\WpfAdressbok1.0\WpfAdressbok1.0.csproj", "{EC37FE86-089B-4289-88F5-B9BCECBAE93A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{CF0F4CA6-3871-4427-978E-23A11D8421EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF0F4CA6-3871-4427-978E-23A11D8421EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF0F4CA6-3871-4427-978E-23A11D8421EC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EC37FE86-089B-4289-88F5-B9BCECBAE93A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC37FE86-089B-4289-88F5-B9BCECBAE93A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC37FE86-089B-4289-88F5-B9BCECBAE93A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC37FE86-089B-4289-88F5-B9BCECBAE93A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
