@@ -1,5 +1,5 @@
 ﻿using NYTTFORSOK;
 
 ContactService contactService = new ContactService();
-contactService.ShowMainMenu(); //Startmenyn körs
+contactService.ShowMainMenu(); //Startmenyn körs.
 
