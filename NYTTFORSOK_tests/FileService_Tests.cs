@@ -8,32 +8,32 @@ public class FileService_Tests
 {
     [Fact]
 
-    public void GetContentFromFile_FileExists_ReturnsList() //Testar om filen finns
+    public void GetContentFromFile_FileExists_ReturnsList() ///Testar om filen finns
     {
-        // Arrange
+        /// Arrange
         string filePath = @"C:\my-projects\NYJSONFIL.json";
-        FileService fileService = new FileService(); 
+        FileService fileService = new FileService();
 
-        // Act
+        /// Act
         var result = fileService.GetContentFromFile(filePath);
 
-        // Assert
+        /// Assert
         Assert.NotNull(result);
         Assert.IsType<List<Contact>>(result);
         Assert.True(result.Count > 0);
     }
 
     [Fact]
-    public void GetContentFromFile_FileDoesNotExist_ReturnsEmptyList() //Testar om filen inte finns. 
+    public void GetContentFromFile_FileDoesNotExist_ReturnsEmptyList() ///Testar om filen inte finns. 
     {
-        // Arrange
+        /// Arrange
         var filePath = @$"C:\{Guid.NewGuid()}\test.json";
-        var fileService = new FileService(); 
+        var fileService = new FileService();
 
-        // Act
+        /// Act
         var result = fileService.GetContentFromFile(filePath);
 
-        // Assert
+        /// Assert
         Assert.NotNull(result);
         Assert.IsType<List<Contact>>(result);
         Assert.Empty(result);
