@@ -2,3 +2,4 @@
 
 ContactService contactService = new ContactService();
 contactService.ShowMainMenu();
+
