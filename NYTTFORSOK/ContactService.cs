@@ -133,9 +133,9 @@ public class ContactService
             Console.WriteLine("2. Efternamn");
             Console.WriteLine("3. E-post");
             Console.WriteLine("4. Telefonnummer");
-            Console.WriteLine("3. Adress");
+            Console.WriteLine("5. Adress");
 
-            Console.Write("Välj vad du vill uppdatera: ");
+            Console.Write("Välj vad du vill uppdatera (1-5): ");
             string updateOption = Console.ReadLine();
 
             switch (updateOption)
