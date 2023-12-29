@@ -136,6 +136,7 @@ public class ContactService
             Console.WriteLine("5. Adress");
 
             Console.Write("Välj vad du vill uppdatera (1-5): ");
+            Console.WriteLine();
             string updateOption = Console.ReadLine();
 
             switch (updateOption)
